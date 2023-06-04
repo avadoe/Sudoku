@@ -16,7 +16,7 @@ clock = pygame.time.Clock()
 ROWS = 9
 CELLSIZE = WIDTH // ROWS
 
-sudoku = generate_sudoku.generate_sudoku()
+sudoku = generate_sudoku.generate_sudoku_dokusan()
 
 def draw():
     WINDOW.fill(WHITE)

@@ -1,3 +1,5 @@
+from dokusan import generators
+import numpy as np
 import sys
 sys.setrecursionlimit(10**6)
 import algo
@@ -19,7 +21,16 @@ def generate_sudoku():
     
     return grid
 
-random_sudoku = generate_sudoku()
+def generate_sudoku_dokusan():
+    arr = generators.random_sudoku()
+    arr = np.array(list(str(arr)))
+    arr = arr.reshape((9, 9))
+
+    arr = [[int(x) for x in row] for row in arr]
+
+    return arr
+
+random_sudoku = generate_sudoku_dokusan()
 for row in random_sudoku: print(row)
 print()
 x = algo.sudoku_solver(random_sudoku)
